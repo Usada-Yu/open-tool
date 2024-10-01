@@ -21,5 +21,6 @@
 
 /* decode */
 #define POLLUX_ERR_DECODE_THD_EXIT      (-15000)        // 解码线程已退出
+#define POLLUX_ERR_FILE_END             (-15001)        // 文件读取至末尾，此宏在非循环读取时可能使用
 
 #endif // __POLLUX_ERRNO_H__

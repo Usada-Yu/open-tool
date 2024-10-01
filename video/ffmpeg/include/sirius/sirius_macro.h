@@ -50,41 +50,4 @@
 #endif
 #endif // SIRIUS_POINTER_ALIGN8
 
-#if defined(__GNUC__) || defined (__clang__)
-#ifndef likely
-/**
- * @brief the probability of selecting a branch is high
- */
-#define likely(x)       __builtin_expect(!!(x), 1)
-#endif // likely
-
-#ifndef unlikely
-/**
- * @brief the probability of selecting a branch is low
- */
-#define unlikely(x)     __builtin_expect(!!(x), 0)
-#endif // unlikely
-
-#else
-#ifndef likely
-#define likely(x)       !!(x)
-#endif  // likely
-
-#ifndef unlikely
-#define unlikely(x)     !!(x)
-#endif // unlikely
-#endif
-
-#if defined (__GNUC__) || defined (__clang__)
-#ifndef always_inline
-/**
- * @brief force inline
- */
-#define always_inline \
-inline __attribute__((always_inline))
-#else
-#define always_inline inline
-#endif
-#endif
-
 #endif // __SIRIUS_MACRO_H__
